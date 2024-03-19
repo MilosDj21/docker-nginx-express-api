@@ -5,7 +5,9 @@ services:
       args:
         NODE_ENV: development
     volumes:
+      #Bind mount - syncs host and container directory
       - ./:/app
+      #Anonymous volume - here used to override bind mount sync for node_modules(when node_modules are deleted on host, in container they remain)
       - /app/node_modules
     environment:
       NODE_ENV: development

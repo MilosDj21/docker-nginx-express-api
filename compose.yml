@@ -16,6 +16,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: exampleUsername
       MONGO_INITDB_ROOT_PASSWORD: examplePassword
     volumes:
+      #Named volume - same as anonymous, but can have custom name
       - mongo-db:/data/db
 
 #Declare all named volumes, so all services can use them
