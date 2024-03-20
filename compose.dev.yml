@@ -1,4 +1,5 @@
 services:
+  #Node service
   node-app:
     build:
       context: .
@@ -11,6 +12,15 @@ services:
       - /app/node_modules
     environment:
       NODE_ENV: development
+      MONGO_DB_NAME: example-blog
+      MONGO_USER: exampleUsername
+      MONGO_PASSWORD: examplePassword
 
     #Overrides cmd from dockerfile
     command: npm run dev
+
+  #Mongodb service
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: exampleUsername
+      MONGO_INITDB_ROOT_PASSWORD: examplePassword
