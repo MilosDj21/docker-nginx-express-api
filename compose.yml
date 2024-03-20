@@ -7,8 +7,8 @@ services:
     #Overrides initial env variable from Dockerfile
     # environment:
     #   - PORT=5000
-    env_file:
-      - ./.env
+    # env_file:
+    #   - ./.env
 
   mongo:
     image: mongo
