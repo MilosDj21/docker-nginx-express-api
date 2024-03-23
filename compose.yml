@@ -4,6 +4,9 @@ services:
     ports:
       - "5000:5000"
 
+    depends_on:
+      - mongo
+
     #Overrides initial env variable from Dockerfile
     # environment:
     #   - PORT=5000
