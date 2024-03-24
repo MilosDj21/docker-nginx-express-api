@@ -1,4 +1,9 @@
 services:
+  nginx:
+    ports:
+      #host:docker
+      - "5000:80"
+
   #Node service
   node-app:
     build:
@@ -20,7 +25,8 @@ services:
     command: npm run dev
 
   #Mongodb service
-  mongo:
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: exampleUsername
-      MONGO_INITDB_ROOT_PASSWORD: examplePassword
+  # mongo:
+  #Overrides init env vars from compose.yml
+  # environment:
+  #   MONGO_INITDB_ROOT_USERNAME: exampleUsername
+  #   MONGO_INITDB_ROOT_PASSWORD: examplePassword

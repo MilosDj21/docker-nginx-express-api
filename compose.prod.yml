@@ -1,4 +1,9 @@
 services:
+  nginx:
+    ports:
+      #host:docker
+      - "80:80"
+
   node-app:
     build:
       context: .
@@ -6,3 +11,7 @@ services:
         NODE_ENV: production
     environment:
       NODE_ENV: production
+      #Pulls these from host env vars
+      MONGO_DB_NAME: ${MONGO_DB_NAME}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
